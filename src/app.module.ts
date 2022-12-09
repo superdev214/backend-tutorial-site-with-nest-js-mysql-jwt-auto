@@ -6,6 +6,7 @@ import { Tutorial } from './tutorial/entity/tutorial.entity';
 import { TutorialModule } from './tutorial/tutorial.module';
 import { User } from './user/entity/user.entity';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -19,7 +20,8 @@ import { UserModule } from './user/user.module';
       synchronize:true,
     }),
     TutorialModule,
-    UserModule
+    UserModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
