@@ -10,10 +10,6 @@ export class TutorialService {
   ) {}
 
   async create(title: string, description: string): Promise<any> {
-    const mTemp = {
-      title: title,
-      description: description,
-    };
     try {
       const result = await this.tutorialRepository.save({
         title: title.toLocaleLowerCase(),

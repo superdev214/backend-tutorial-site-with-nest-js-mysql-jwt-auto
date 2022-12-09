@@ -4,6 +4,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { Tutorial } from './tutorial/entity/tutorial.entity';
 import { TutorialModule } from './tutorial/tutorial.module';
+import { User } from './user/entity/user.entity';
+import { UserModule } from './user/user.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -13,10 +15,11 @@ import { TutorialModule } from './tutorial/tutorial.module';
       username:'root',
       password:'',
       database:'testdb',
-      entities:[Tutorial],
+      entities:[Tutorial,User],
       synchronize:true,
     }),
-    TutorialModule
+    TutorialModule,
+    UserModule
   ],
   controllers: [AppController],
   providers: [AppService],
